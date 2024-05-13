@@ -1,0 +1,30 @@
+import pygame
+import sys
+
+pygame.init()
+
+# config da tela
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Tela Inicial")
+
+# imagem de fundo
+#adicionar nessa parte o plano de fundo 
+
+# loop 
+#quando der enter inicia o jogo
+def main():
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    running = False
+
+        tela_inicial()
+
+if __name__ == "__main__":
+    main()
