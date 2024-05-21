@@ -1,0 +1,38 @@
+# Carrega as imagens do menu
+img1 = pygame.image.load('imagem1.png').convert()
+imagem1 = pygame.transform.scale(img1, (1400,700))
+img2 = pygame.image.load('imagem2.png').convert()
+imagem2 = pygame.transform.scale(img2, (1400,700))
+current_image = imagem1  # Começa com a primeira imagem
+
+
+# Função para alternar entre as imagens do menu
+def alternar_imagem_menu():
+    nonlocal current_image
+    if current_image == imagem1:
+        current_image = imagem2
+    else:
+        current_image = imagem1
+
+# Função para desenhar o menu na tela
+def desenhar_menu():
+    window.blit(current_image, (0, 0))
+
+sprite_sheet = pygame.image.load(os.path.join(imagens, 'Raposas.png')).convert_alpha()
+go = pygame.image.load('game_over.jpeg').convert()
+game_over = pygame.transform.scale(go, (1400,700))
+maior_prontuacao = 0
+
+# Pontuação
+def Pontuacao(texto,tamanho,cor):   # Texto de Score (Pontuação)
+    fonte = pygame.font.SysFont('arial', tamanho, True, False)
+    texto_msg = f'{texto}'
+    texto_final = fonte.render(texto_msg, True, cor)
+    return texto_final
+
+# Finalização
+def Final(texto,tamanho,cor):   # Texto de Score (Pontuação)
+    fonte = pygame.font.SysFont('arial', tamanho, True, False)
+    texto_msg = f'{texto}'
+    texto_final = fonte.render(texto_msg, True, cor)
+    return texto_final
