@@ -1,0 +1,37 @@
+# Cenário de Fundo do Jogo
+Cen = pygame.image.load(os.path.join(imagens, 'Cenário Final 2.png')).convert()
+t = 24
+Cenario = pygame.transform.scale(Cen, (150*t, 30*t))
+
+sprites = pygame.sprite.Group()
+rapos = Raposa()
+sprites.add(rapos)
+
+# Movimentação do Fundo
+movimento = 0
+compri_cenario = Cenario.get_width()
+repete = math.ceil(WIDTH/ compri_cenario) + 2
+
+obs_inicial = 0
+obs_novo = obs_inicial + 1
+
+if obs_novo != obs_inicial:
+  # Inserção dos obstáculos
+  obs = Obstaculos()
+  sprites.add(obs)
+  todos_obstaculos = pygame.sprite.Group()
+  todos_obstaculos.add(obs)
+
+# Repetição do Jogo
+reinicia = False
+ponts = 0
+aceleracao = 0
+
+# ---- LOOP INICIAL
+menu_visible = True
+clock = pygame.time.Clock()
+
+# Música
+musica = pygame.mixer.music.load('madagascar pygame.mp3')
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.play(-1)
