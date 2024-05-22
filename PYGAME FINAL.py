@@ -15,7 +15,6 @@ correto funcionamento do jogo.
 
 import pygame
 from pygame.locals import *
-from sys import exit
 import os
 import random
 import math
@@ -202,7 +201,6 @@ def TOCA_DA_RAPOSA():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
-                sys.exit()
                 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:  # Inicia o jogo quando Enter é pressionado
