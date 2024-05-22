@@ -14,6 +14,5 @@ Em seu terminal, instale a biblioteca pygame por meio da função pip install py
 Para Jogar, basta seguir as instruções presentes na tela, sendo 'Enter' para iniciar o jogo, 'r' para reiniciar a partida após colisão e 's' para sair do jogo, retornando ao menu inicial, também após a colisão.
 
 ## Link do Vídeo
-Veja o funcionamento do Jogo no Vídeo a seguir:
-Link: https://youtu.be/Igxbkwf3W2k?si=lRKdKNxjdwYDwTk3
+Veja o funcionamento do Jogo no Vídeo a seguir: https://youtu.be/Igxbkwf3W2k?si=lRKdKNxjdwYDwTk3
 
