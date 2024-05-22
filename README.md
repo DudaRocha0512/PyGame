@@ -11,7 +11,7 @@ Baixe o código do Github intitulado 'PYGAME FINAL.py' e os Recursos Visuais e d
 
 Em seu terminal, instale a biblioteca pygame por meio do comando pip install pygame. Após, execute o jogo com a função Run Python File, representada por uma seta presente no canto superior direito do Visual Studio Code.
 
-Para Jogar, basta seguir as instruções presentes na tela, sendo 'Enter' para iniciar o jogo, 'r' para reiniciar a partida após colisão e 's' para sair do jogo, retornando ao menu inicial, também após a colisão.
+Para Jogar, basta seguir as instruções presentes na tela, sendo 'Enter' para iniciar o jogo, 'Space' para efetuar o salto, 'r' para reiniciar a partida após colisão e 's' para sair do jogo, retornando ao menu inicial, também após a colisão.
 
 ## Link do Vídeo
 Veja o funcionamento do Jogo no Vídeo a seguir: https://youtu.be/Igxbkwf3W2k?si=lRKdKNxjdwYDwTk3
