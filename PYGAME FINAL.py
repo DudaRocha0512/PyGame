@@ -1,4 +1,15 @@
 #----------------------------------------------------- TOCA DA RAPOSA -----------------------------------------------------#
+'''
+CONSIDERAÇÕES SOBRE A CONSTRUÇÃO DO CÓDIGO
+Para construir o jogo TOCA DA RAPOSA, foi utilizada como base principal um conjunto de vídeos (playlist)
+intitulado "Curso PyGame 2020", em que cada vídeo está referenciado ao longo do código, porém partes de 
+um mesmo vídeo podem ter sido usadas em diferentes momentos no código, de acordo com a respectiva função.
+Porém, os códigos apresentados nos vídeos foram mesclados com outros de outros vídeos, para garantir o
+correto funcionamento do jogo.
+
+'''
+
+
 
 # ----- Importa e inicia pacotes
 
@@ -11,7 +22,7 @@ import math
 from menu import *
 
 pygame.init()
-pygame.mixer.init()
+pygame.mixer.init()                
 
 # ----- Gera tela principal
 WIDTH = 1400
@@ -41,7 +52,7 @@ def TOCA_DA_RAPOSA():
     current_image = imagem1  # Começa com a primeira imagem
     
 
-    # Função para alternar entre as imagens do menu
+    # Função para alternar entre as imagens do menu                    # Código extraído de https://youtu.be/GMBqjxcKogA?si=GDE-xix2DPdXqHJu
     def alternar_imagem_menu():
         nonlocal current_image
         if current_image == imagem1:
@@ -49,7 +60,7 @@ def TOCA_DA_RAPOSA():
         else:
             current_image = imagem1
 
-    # Função para desenhar o menu na tela
+    # Função para desenhar o menu na tela               
     def desenhar_menu():
         window.blit(current_image, (0, 0))
 
@@ -73,7 +84,7 @@ def TOCA_DA_RAPOSA():
         return texto_final                
 
     # Imagens da Raposa
-    class Raposa(pygame.sprite.Sprite):    # Imagens da Raposa
+    class Raposa(pygame.sprite.Sprite):    # Imagens da Raposa        # Código extraído de https://youtu.be/OxenBMy13AM?si=nZm3oERQXmsc1DPV
         def __init__(self):
             pygame.sprite.Sprite.__init__(self)
             raposa1 = sprite_sheet.subsurface((332,0), (166,166))
@@ -87,7 +98,7 @@ def TOCA_DA_RAPOSA():
             self.y_inicial = 600 - 166//2
             self.pulo = False
             
-        def pular(self):    # Pulo da Raposa
+        def pular(self):    # Pulo da Raposa                          # Código extraído de https://youtu.be/wWF-n2zUksI?si=LxDDloRlEPrWmouN
             self.pulo = True
 
         def update(self):
@@ -144,7 +155,7 @@ def TOCA_DA_RAPOSA():
             
             self.rect.x -= 10
         
-    # Cenário de Fundo do Jogo
+    # Cenário de Fundo do Jogo     
     Cen = pygame.image.load(os.path.join(imagens, 'Cenário Final 2.png')).convert()
     t = 24
     Cenario = pygame.transform.scale(Cen, (150*t, 30*t))
@@ -153,7 +164,7 @@ def TOCA_DA_RAPOSA():
     rapos = Raposa()
     sprites.add(rapos)
 
-    # Movimentação do Fundo
+    # Movimentação do Fundo                        
     movimento = 0
     compri_cenario = Cenario.get_width()
     repete = math.ceil(WIDTH/ compri_cenario) + 2
@@ -161,8 +172,8 @@ def TOCA_DA_RAPOSA():
     obs_inicial = 0
     obs_novo = obs_inicial + 1
 
-    if obs_novo != obs_inicial:
-        # Inserção dos obstáculos
+    if obs_novo != obs_inicial:                                            
+        # Inserção dos obstáculos                                     # Código extraído de https://youtu.be/80dKqFJcdME?si=E96rZtkUYr5mT58v
         obs = Obstaculos()
         sprites.add(obs)
         todos_obstaculos = pygame.sprite.Group()
@@ -177,7 +188,7 @@ def TOCA_DA_RAPOSA():
     menu_visible = True
     clock = pygame.time.Clock()
 
-    # Música
+    # Música                                                           # Código extraído de https://youtu.be/iIb_xOs2a_E?si=8408_vyGvFrcUDOF
     musica = pygame.mixer.music.load('madagascar pygame.mp3')
     pygame.mixer.music.set_volume(0.5)
     pygame.mixer.music.play(-1)
@@ -197,7 +208,7 @@ def TOCA_DA_RAPOSA():
                 if event.key == pygame.K_RETURN:  # Inicia o jogo quando Enter é pressionado
                     menu_visible = False
 
-        # Desenha o menu
+        # Desenha o menu                                               
         if menu_visible:
             desenhar_menu()
 
@@ -233,7 +244,7 @@ def TOCA_DA_RAPOSA():
                             else:
                                 rapos.pular()   
 
-                        if event.key == pygame.K_r and reinicia == True:   # Reinicia o Jogo 
+                        if event.key == pygame.K_r and reinicia == True:   # Reinicia o Jogo        # Código extraído de https://youtu.be/atoGQ9o0ooI?si=ylGeWRJghNIVxQ9j
                             ponts = 0
                             aceleracao = 0
                             movimento = 0
@@ -247,7 +258,7 @@ def TOCA_DA_RAPOSA():
                             TOCA_DA_RAPOSA()     
                                         
                 # Detector de colisão
-                colisao = pygame.sprite.spritecollide(rapos,todos_obstaculos, False, pygame.sprite.collide_mask)
+                colisao = pygame.sprite.spritecollide(rapos,todos_obstaculos, False, pygame.sprite.collide_mask)    # Código extraído de https://youtu.be/80dKqFJcdME?si=GPfedTAo8QdaIA-h
 
                 sprites.draw(window)
 
@@ -255,9 +266,9 @@ def TOCA_DA_RAPOSA():
                     reinicia = True
                     lista_pontos.append(ponts)
 
-                    # Game Over e Continuar
-                    window.blit(game_over, (0,0))
-
+                    # Game Over e Continuar                           # Código extraído de https://youtu.be/Zugjmqelux4?si=upFZV9_91gH0TqW-
+                    window.blit(game_over, (0,0))                     # Código extraído de https://youtu.be/hs4bzftGuME?si=Iqrb8zmoTWbAHEjM
+ 
                     pergunta = Final(f'DESEJA CONTINUAR?', 35, (225, 225, 225))
                     pygame.draw.rect(window, ORANGE, (900, 530, 472, 125))
                     window.blit(pergunta, (950,550))
