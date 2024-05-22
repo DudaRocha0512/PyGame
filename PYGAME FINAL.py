@@ -288,7 +288,7 @@ def TOCA_DA_RAPOSA():
 
                 # Aumenta a velocidade a cada 250 pontos
                 if ponts % 150 == 0:
-                    aceleracao += 5
+                    aceleracao += 7
 
                 # Exibe a pontuação
                 pygame.draw.rect(window, ORANGE, (1180, 30, 205, 60))
