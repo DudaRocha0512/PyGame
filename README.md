@@ -15,4 +15,5 @@ Para Jogar, basta seguir as instruções presentes na tela, sendo 'Enter' para i
 
 ## Link do Vídeo
 Veja o funcionamento do Jogo no Vídeo a seguir:
-Link: 
+Link: https://youtu.be/Igxbkwf3W2k?si=lRKdKNxjdwYDwTk3
+
